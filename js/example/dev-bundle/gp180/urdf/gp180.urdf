@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="gp180">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0991766805236459 0.140762839389922 0.000246722079027381"
+        rpy="0 0 0" />
+      <mass
+        value="81.4966501954822" />
+      <inertia
+        ixx="1.90799790936025"
+        ixy="0.10921742260273"
+        ixz="-0.00128396943611954"
+        iyy="4.54845374686453"
+        iyz="0.000794292539221916"
+        izz="3.77883127250222" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Empty_Link_1">
+    <inertial>
+      <origin
+        xyz="0.0919915117003802 0.0615102587715189 0.174595417538863"
+        rpy="0 0 0" />
+      <mass
+        value="49.1924104291229" />
+      <inertia
+        ixx="1.80267155728019"
+        ixy="-0.458786462625734"
+        ixz="-0.384891639933671"
+        iyy="3.21657374577264"
+        iyz="-0.366752519144428"
+        izz="3.27188952047207" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.317"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Empty_Link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1415"
+      upper="3.1415"
+      effort="1555"
+      velocity="2.18" />
+  </joint>
+  <link
+    name="Empty_Link_2">
+    <inertial>
+      <origin
+        xyz="0.000689849067874337 -0.491143282638452 -0.107223510435478"
+        rpy="0 0 0" />
+      <mass
+        value="74.1437830384373" />
+      <inertia
+        ixx="11.4154550572276"
+        ixy="-0.0377028927520616"
+        ixz="0.00205898121264436"
+        iyy="0.695726622142989"
+        iyz="-0.289481134667988"
+        izz="11.5725632695022" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0.325 0.07 0.333"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="Empty_Link_1" />
+    <child
+      link="Empty_Link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.0747"
+      upper="1.326"
+      effort="1555"
+      velocity="201" />
+  </joint>
+  <link
+    name="Empty_Link_3">
+    <inertial>
+      <origin
+        xyz="0.25864 -0.20282 0.0062269"
+        rpy="0 0 0" />
+      <mass
+        value="51.994" />
+      <inertia
+        ixx="1.6039"
+        ixy="1.0807"
+        ixz="0.43868"
+        iyy="5.1048"
+        iyz="-0.43006"
+        izz="5.6519" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 -1.15 -0.0285"
+      rpy="0 0 0" />
+    <parent
+      link="Empty_Link_2" />
+    <child
+      link="Empty_Link_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5"
+      upper="1.57"
+      effort="1555"
+      velocity="2.18" />
+  </joint>
+  <link
+    name="Empty_Link_4">
+    <inertial>
+      <origin
+        xyz="0.0134064319773667 3.79300779780323E-05 -0.131114372794393"
+        rpy="0 0 0" />
+      <mass
+        value="3.16663423383513" />
+      <inertia
+        ixx="0.0232710701898888"
+        ixy="1.27410731300378E-05"
+        ixz="0.00294136058351374"
+        iyy="0.0243519278810685"
+        iyz="-2.23410209371814E-05"
+        izz="0.00831945478383318" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="join4"
+    type="revolute">
+    <origin
+      xyz="1.033 -0.3 -0.0415"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="Empty_Link_3" />
+    <child
+      link="Empty_Link_4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-6.283"
+      upper="6.283"
+      effort="1000"
+      velocity="3.18" />
+  </joint>
+  <link
+    name="Empty_Link_5">
+    <inertial>
+      <origin
+        xyz="-0.0532968305752841 -2.03724286329532E-07 -0.0481897305844847"
+        rpy="0 0 0" />
+      <mass
+        value="5.94267388138655" />
+      <inertia
+        ixx="0.0528282098726763"
+        ixy="-4.41892168048376E-08"
+        ixz="-0.0103908856569453"
+        iyy="0.0787549283003692"
+        iyz="8.04376160149887E-08"
+        izz="0.0517599232967381" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="0.074 0 -0.192"
+      rpy="0 -1.5708 3.14159" />
+    <parent
+      link="Empty_Link_4" />
+    <child
+      link="Empty_Link_5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.269"
+      upper="2.269"
+      effort="1000"
+      velocity="3.05" />
+  </joint>
+  <link
+    name="Empty_Link_6">
+    <inertial>
+      <origin
+        xyz="-0.00107402465584735 -4.30187608291277E-06 0.0120027840854047"
+        rpy="0 0 0" />
+      <mass
+        value="0.44417028263965" />
+      <inertia
+        ixx="0.000783097884722136"
+        ixy="9.20718731565828E-08"
+        ixz="-1.78404370514858E-06"
+        iyy="0.000741359939856679"
+        iyz="2.61612818057647E-08"
+        izz="0.00147839257990755" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gp180/meshes/Empty_Link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint6"
+    type="revolute">
+    <origin
+      xyz="-0.1995 0 -0.074"
+      rpy="3.1416 -1.5708 3.146" />
+    <parent
+      link="Empty_Link_5" />
+    <child
+      link="Empty_Link_6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-6.283"
+      upper="6.283"
+      effort="618"
+      velocity="4.63" />
+  </joint>
+</robot>
