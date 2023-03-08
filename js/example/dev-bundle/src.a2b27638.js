@@ -36791,14 +36791,47 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 /* globals */
 
+var robot;
+
+// angle 是弧度
+function get_matrix(angles) {
+  console.log();
+  var joints = new Array(angles.length);
+  var idx = 0;
+  for (var i in robot.joints) {
+    var joint = robot.joints[i];
+    joints[idx] = joint;
+    idx = idx + 1;
+  }
+  for (var _i in angles) {
+    var _joint = joints[_i];
+    _joint.setJointValue(angles[_i]);
+  }
+  robot.updateMatrixWorld(true);
+  var matrix = {};
+  for (var _i2 in robot.joints) {
+    var _joint2 = robot.joints[_i2];
+    matrix[_joint2.name] = _joint2.matrixWorld;
+    console.log(_joint2);
+  }
+  return matrix;
+}
+
+// function init() {
 // Load robot
 var manager = new THREE.LoadingManager();
 var loader = new _URDFLoader.default(manager);
-loader.load("./gp180/urdf/gp180.urdf");
+loader.load("./gp180/urdf/gp180.urdf", function (result) {
+  robot = result;
+});
 manager.onLoad = function () {
-  console("load success");
+  // console.log("load success");
+  var angles = [1, 1, 1, 1, 1, 1];
+  console.log(robot);
+  var matrix = get_matrix(angles);
+  console.log(matrix);
 };
-console.log("lalalla");
+// }
 },{"three":"../node_modules/three/build/three.module.js","three/examples/jsm/loaders/STLLoader.js":"../node_modules/three/examples/jsm/loaders/STLLoader.js","../../src/URDFLoader":"../src/URDFLoader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -36824,7 +36857,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51050" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50977" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

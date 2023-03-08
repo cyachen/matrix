@@ -259,7 +259,7 @@
     </collision>
   </link>
   <joint
-    name="join4"
+    name="joint4"
     type="revolute">
     <origin
       xyz="1.033 -0.3 -0.0415"
